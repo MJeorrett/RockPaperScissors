@@ -23,7 +23,13 @@
             android:label="@string/boring_activity_label"
             android:parentActivityName=".HomeActivity">
 
-            </activity>
+        </activity>
+
+        <activity android:name=".SpicyActivity"
+            android:label="@string/spicy_activity_label"
+            android:parentActivityName=".HomeActivity">
+
+        </activity>
 
     </application>
 

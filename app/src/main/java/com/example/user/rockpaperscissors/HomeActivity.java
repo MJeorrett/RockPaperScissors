@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         mSpicyButton = (Button) findViewById(R.id.SPICY);
 
         mBoringButton.setOnClickListener( this );
-//        mSpicyButton.setOnClickListener( this );
+        mSpicyButton.setOnClickListener( this );
 
     }
 
@@ -35,6 +35,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = null;
         if (viewId == R.id.BORING) {
             intent = new Intent(this, BoringActivity.class);
+        } else {
+            intent = new Intent(this, SpicyActivity.class);
         }
         startActivity(intent);
     }

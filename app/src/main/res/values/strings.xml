@@ -5,6 +5,8 @@
     <string name="rock_button_text">ROCK</string>
     <string name="paper_button_text">PAPER</string>
     <string name="scissors_button_text">SCISSORS</string>
+    <string name="spock_button_text">SPOCK</string>
+    <string name="lizard_button_text">LIZARD</string>
     <string name="boring_button_text">Boring?</string>
     <string name="spicy_button_text">Spicy?</string>
     <string name="welcome_message">Claudia says: \'Don\'t be a dick, pick the spicy button\'</string>
