@@ -5,5 +5,6 @@ package com.example.user.rockpaperscissors;
  */
 
 public class GameLogic {
-}
 
+
+}
