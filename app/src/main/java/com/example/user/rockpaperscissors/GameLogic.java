@@ -9,17 +9,23 @@ import java.util.HashMap;
 
 public class GameLogic {
 
-    enum Hand {
-        ROCK,
-        PAPER,
-        SCISSORS
-    }
-
-    private static final HashMap<Hand, Hand> WIN_AGAINST;
+    private static final HashMap<String, String> WIN_AGAINST;
     static {
         WIN_AGAINST = new HashMap<>();
-        WIN_AGAINST.put( Hand.ROCK, Hand.SCISSORS );
-        WIN_AGAINST.put( Hand.PAPER, Hand.ROCK );
-        WIN_AGAINST.put( Hand.SCISSORS, Hand.PAPER );
+        WIN_AGAINST.put( "ROCK", "SCISSORS" );
+        WIN_AGAINST.put( "PAPER", "ROCK" );
+        WIN_AGAINST.put( "SCISSORS", "PAPER" );
+    }
+
+    public static int getWinner(String hand1, String hand2){
+        if (hand1.equals(hand2)){
+            return 0;
+        }
+        String hand1Beats = WIN_AGAINST.get(hand1);
+        if (hand2.equals(hand1Beats)){
+            return 1;
+        }
+        return 2;
+
     }
 }
