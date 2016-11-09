@@ -20,8 +20,22 @@ public class GameLogicTest {
     }
 
     @Test
-    public void canDraw() {
+    public void paperDrawsPaper() {
         assertEquals(0, GameLogic.getWinner("PAPER", "PAPER"));
     }
 
+    @Test
+    public void spockDrawsSpock() {
+        assertEquals(0, GameLogic.getWinner("SPOCK", "SPOCK"));
+    }
+
+    @Test
+    public void lizardBeatsPaper() {
+        assertEquals(1, GameLogic.getWinner("LIZARD", "PAPER"));
+    }
+
+    @Test
+    public void paperLosesToLizard(){
+        assertEquals(2, GameLogic.getWinner("PAPER", "LIZARD"));
+    }
 }
