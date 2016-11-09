@@ -24,5 +24,4 @@ public class GameLogicTest {
         assertEquals(0, GameLogic.getWinner("PAPER", "PAPER"));
     }
 
-
 }
