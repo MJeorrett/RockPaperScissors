@@ -18,6 +18,13 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".BoringActivity"
+            android:label="@string/boring_activity_label"
+            android:parentActivityName=".HomeActivity">
+
+            </activity>
+
     </application>
 
 </manifest>

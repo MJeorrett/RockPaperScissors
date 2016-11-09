@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Rock Paper Scissors</string>
+    <string name="boring_activity_label">Boring Version</string>
+    <string name="spicy_activity_label">Spicy Version</string>
     <string name="rock_button_text">ROCK</string>
     <string name="paper_button_text">PAPER</string>
     <string name="scissors_button_text">SCISSORS</string>

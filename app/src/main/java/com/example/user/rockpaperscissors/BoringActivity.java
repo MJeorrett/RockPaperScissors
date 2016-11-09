@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Created by user on 09/11/2016.
  */
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class BoringActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mRockButton;
     private Button mPaperButton;
