@@ -32,12 +32,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         int viewId = view.getId();
-        Intent intent = null;
+
+        Intent intent = new Intent(this, PlayActivity.class);
+
         if (viewId == R.id.BORING) {
-            intent = new Intent(this, BoringActivity.class);
+            intent.putExtra( "extendedState", false );
         } else {
-            intent = new Intent(this, SpicyActivity.class);
+            intent.putExtra( "extendedState", true );
         }
+
         startActivity(intent);
     }
 }

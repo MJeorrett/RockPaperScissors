@@ -5,13 +5,14 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
  * Created by user on 09/11/2016.
  */
 
-public class SpicyActivity extends AppCompatActivity implements View.OnClickListener {
+public class PlayActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mRockButton;
     private Button mPaperButton;
@@ -19,11 +20,12 @@ public class SpicyActivity extends AppCompatActivity implements View.OnClickList
     private Button mSpockButton;
     private Button mLizardButton;
     private TextView mWinnerTextView;
+    private boolean mExtendedState;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_spicy);
+        setContentView( R.layout.activity_play);
 
         mRockButton = (Button) findViewById( R.id.ROCK );
         mPaperButton = (Button) findViewById( R.id.PAPER );
@@ -32,11 +34,19 @@ public class SpicyActivity extends AppCompatActivity implements View.OnClickList
         mLizardButton = (Button) findViewById( R.id.LIZARD );
         mWinnerTextView = (TextView) findViewById( R.id.winner_text_view );
 
+        mExtendedState = getIntent().getBooleanExtra( "extendedState", false );
+
         mRockButton.setOnClickListener( this );
         mPaperButton.setOnClickListener( this );
         mScissorsButton.setOnClickListener( this );
         mSpockButton.setOnClickListener( this );
         mLizardButton.setOnClickListener( this );
+
+        if ( !mExtendedState ) {
+            LinearLayout layout = (LinearLayout) findViewById( R.id.activity_play_layout );
+            layout.removeView( mSpockButton );
+            layout.removeView( mLizardButton );
+        }
     }
 
 
@@ -46,7 +56,7 @@ public class SpicyActivity extends AppCompatActivity implements View.OnClickList
         Button button = (Button) view;
 
         String playerHand = button.getText().toString();
-        String computerHand = GameLogic.getRandomHand();
+        String computerHand = GameLogic.getRandomHand( mExtendedState );
 
         int winner = GameLogic.getWinner( playerHand, computerHand );
 

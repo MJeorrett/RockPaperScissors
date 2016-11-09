@@ -30,9 +30,9 @@ public class GameLogic {
 //        }
 //    }
 
-    private static final HashMap<String, String[]> WIN_AGAINST;
+    private static final LinkedHashMap<String, String[]> WIN_AGAINST;
     static {
-        WIN_AGAINST = new HashMap<>();
+        WIN_AGAINST = new LinkedHashMap<>();
         String[] rockWins = {"SCISSORS", "LIZARD"};
         String[] paperWins = {"ROCK", "SPOCK"};
         String[] scissorsWins = {"PAPER", "LIZARD"};
@@ -67,12 +67,13 @@ public class GameLogic {
         return false;
     }
 
-    public static String getRandomHand() {
+    public static String getRandomHand( boolean extended ) {
 
         Object[] options = WIN_AGAINST.keySet().toArray();
 
         Random rand = new Random();
-        int randIndex = rand.nextInt( options.length );
+        int maxIndex = extended ? 5 : 3;
+        int randIndex = rand.nextInt( maxIndex );
 
         String result = (String) options[randIndex];
 
