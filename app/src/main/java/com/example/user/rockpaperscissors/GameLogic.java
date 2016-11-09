@@ -2,6 +2,8 @@ package com.example.user.rockpaperscissors;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
+import java.util.Set;
 
 /**
  * Created by user on 09/11/2016.
@@ -27,5 +29,17 @@ public class GameLogic {
         }
         return 2;
 
+    }
+
+    public static String getRandomHand() {
+
+        Object[] options = WIN_AGAINST.keySet().toArray();
+
+        Random rand = new Random();
+        int randIndex = rand.nextInt( options.length );
+
+        String result = (String) options[randIndex];
+
+        return result;
     }
 }
